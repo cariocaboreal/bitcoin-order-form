@@ -19,7 +19,7 @@ Adds a bitcoin order form for "[Maps Marker Pro](http://www.mapsmarker.com/)" an
 
 Please note that this plugin is not configurable via the WordPress admin backend! I shared this plugin for other developers in order to be able to easier build an own form by just customizing an existing plugin.
 
-The Plugin uses live data from MT Gox to convert Bitcoin to real currency and gathers data from API found at [http://btcrate.com/](http://btcrate.com/)
+The Plugin uses live data from MT Gox to convert Bitcoin to real currency by using the API from at [http://btcrate.com/](http://btcrate.com/)
 
 Originally based on the plugin "[Bitcoin Calculator Widget](http://wordpress.org/plugins/bitcoin-currency-converter/)" by [Richard Macarthy](www.richardmacarthy.com), [http://www.richardmacarthy.com/](http://www.richardmacarthy.com/)
 

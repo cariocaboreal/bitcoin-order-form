@@ -4,8 +4,11 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'order-form.php') { die ("Please do
 
 function bitcoin_calculator_widget() {
 ?>	
+
 	<div class="bitcoin-order-form">
-	
+		<?php if  (!in_array ('curl', get_loaded_extensions())) {
+			echo '<div style="font-weight:bold;text-align:center;font-size:120%;color:black;background:red;margin:0;">cURL is not available on your server - please contact your hoster!</div>';
+		}?>
 		<div class="bitcoin-order-form-heading">
 			<img class="bitcoin-order-form-logo" src="<?php echo BITCOIN_PLUGIN_URL . "img/bitcoin-25x25.png"; ?>"/>Maps Marker Pro order form - using bitcoins
 		</div>
@@ -65,7 +68,7 @@ function bitcoin_calculator_widget() {
 		
 		function convert ()
 		{
-			var url = '<?php echo BITCOIN_PLUGIN_URL ?>' + 'lib/exchange.php';
+			var url = '<?php echo BITCOIN_PLUGIN_URL ?>' + 'lib/exchange.php?bitcoin_plugin_url=' + '<?php echo BITCOIN_PLUGIN_URL ?>';
 							
 			var price = j( "input:checked" ).val();
 			var m1 = j( "input[name='firstname']" ).val();
