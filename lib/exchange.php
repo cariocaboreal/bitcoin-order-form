@@ -37,7 +37,8 @@ if ($bitcoins_nonce == 'bitcoins') {
 					$bitcoins = json_decode($c);
 					$bitcoins = round($bitcoins->converted, 6);
 					
-					echo  "" . $price . " EUR = <span id='bitcoins-converted'>" . $bitcoins . "</span> bitcoins<br/>";
+					echo  "" . $price . " EUR = " . $bitcoins . " bitcoins<br/>";
+					echo "<input type='hidden' name='bitcoins-converted' value='" . $bitcoins . "' />";
 					echo "<table style='border:none;margin-top:10px;'><tr><td style='width:185px;'>
 						<a class='bitcoins-pay-button' href='bitcoin:" . $bitcoin_address . "?amount=" . $bitcoins . "&label=" . $label . "'><img src='" . $bitcoin_plugin_url . "img/bitcoin-25x25.png' style='float:left;margin:7px 5px 0 5px;'/>click to pay</a>
 						</td>
