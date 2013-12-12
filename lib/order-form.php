@@ -68,7 +68,7 @@ function bitcoin_calculator_widget() {
 		
 		function convert ()
 		{
-			var url = '<?php echo BITCOIN_PLUGIN_URL ?>' + 'lib/exchange.php?bitcoin_plugin_url=' + '<?php echo BITCOIN_PLUGIN_URL ?>';
+			var url = '<?php echo BITCOIN_PLUGIN_URL ?>' + 'lib/exchange.php?bitcoin_plugin_url=' + '<?php echo BITCOIN_PLUGIN_URL ?>' + '&nonce=bitcoins';
 							
 			var price = j( "input:checked" ).val();
 			var m1 = j( "input[name='firstname']" ).val();
