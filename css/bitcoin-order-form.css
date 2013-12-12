@@ -1,0 +1,91 @@
+.bitcoin-order-form {
+	padding:10px;
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px#888;
+	box-shadow: 0 0 5px #888;
+	font-family:Arial, Helvetica, sans-serif;
+	width:520px;
+	color:#333;
+	font-size:10pt;
+	margin:10px 0 10px 0;
+}
+.bitcoin-order-form-heading {
+	font-weight:bold;
+	background-color:#333;
+	color:#efefef;
+	padding:10px;
+	margin-bottom:10px;
+	font-size:20px;
+}
+.bitcoin-order-form-logo {
+	float:left;
+	margin-right:10px;
+	margin-top:3px;
+}
+.bitcoin-order-form input {
+	border:none;
+	border:solid 1px #ddd;
+	margin:0px 0px 10px 0px;
+}
+.bitcoin-order-form input[type=text] {
+	width:100%;
+}
+.bitcoin-order-form-result {
+	background-color: #E28008;
+	padding:5px 10px 17px 10px;
+	margin:10px 0px 0px 0px;
+	font-size: 20px;
+	color:#fff;
+	height: 20px;
+}
+.bitcoin-order-form td {
+	color:#333;
+	border:none;
+}
+.bitcoin-result td {
+	vertical-align:middle;
+	border:none;
+	color:#333;
+	text-align:center;
+}
+.bitcoin-order-form-exchange-info {
+	background-color:#efefef;
+	border:solid 1px #ddd;
+	margin:0px 0 10px 0;	
+	text-align:center;
+}
+.bitcoins-pay-button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #caefab;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #caefab;
+	box-shadow:inset 0px 1px 0px 0px #caefab;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #77d42a), color-stop(1, #5cb811) );
+	background:-moz-linear-gradient( center top, #77d42a 5%, #5cb811 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77d42a', endColorstr='#5cb811');
+	background-color:#77d42a;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	border:1px solid #268a16;
+	display:inline-block;
+	color:#ffffff !important;
+	font-size:24px;
+	font-weight:bold;
+	padding:12px 9px 12px 4px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #aade7c;
+	margin-left:4px;
+}
+.bitcoins-pay-button:hover {
+	color:#306108 !important;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #5cb811), color-stop(1, #77d42a) );
+	background:-moz-linear-gradient( center top, #5cb811 5%, #77d42a 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cb811', endColorstr='#77d42a');
+	background-color:#5cb811;
+}
+.bitcoins-pay-button:active {
+    position: relative;
+    top: 1px;
+}
+.bitcoins-pay-button:visited {
+    color: #306108;
+}
