@@ -12,6 +12,8 @@ function bitcoin_calculator_widget() {
 		<div class="bitcoin-order-form-heading">
 			<img class="bitcoin-order-form-logo" src="<?php echo BITCOIN_PLUGIN_URL . "img/bitcoin-25x25.png"; ?>"/>Maps Marker Pro order form - using bitcoins
 		</div>
+		
+		<h2>Step 1: choose license and pay with bitcoins</h2>
 
 		<p style="margin-bottom:10px;line-height:135%;">
 		Each license is valid for 1 domain name, does not expire and can be transferred if needed. Renewing access to updates and support is optional - see <a href="http://mapsmarker.com/renew">http://mapsmarker.com/renew</a> for more details.
@@ -35,7 +37,13 @@ function bitcoin_calculator_widget() {
 			<a href="https://mtgox.com/" target="_blank">MtGox</a> is used as bitcoin exchange and <a href="http://xe.com/ucc" target="_blank">XE.com</a> for converting into EUR</a>
 		</div>
 
-		<table style="border:0;margin-bottom:120px;">
+		<h2 style="margin-top:160px;">Step 2: submit your order details</h2>
+		
+		<p style="line-height:135%;">
+		This is needed in order to assign the license to your account and for your invoice.
+		</p>
+
+		<table style="border:0;margin-bottom:10px;">
 		<tr><td style="width:80px;">First name:</td><td><input type="text" name="firstname" value=""/></td></tr>
 		<tr><td>Last name:</td><td><input type="text" name="lastname" value=""/></td></tr>
 		<tr><td>E-Mail:</td><td><input type="text" name="email" value=""/></td></tr>
@@ -44,6 +52,9 @@ function bitcoin_calculator_widget() {
 		<tr><td>City:</td><td><input type="text" name="city" value=""/></td></tr>
 		<tr><td>Country:</td><td><input type="text" name="country" value=""/></td></tr>
 		</table>
+		
+		<span id="submit-button" class="bitcoins-pay-button" href="#" style="padding:5px 10px;cursor:pointer;margin-bottom:5px;">submit</span>
+		<div id="submit-log"></div>
 	
 	</div>
 	
@@ -56,32 +67,19 @@ function bitcoin_calculator_widget() {
 			j( "input[name='euro-to-convert']" ).on( "click", function() {
 				convert();
 			});
-			//info: convert if text fields are focused out
-			j( "input[type='text']" ).on( "focusout", function() {
-				convert();
-			});
-			//info: convert country on each change to update bitcoin link before payment
-			j( "input[name='country']" ).on( "keyup", function() {
-				convert();
+			//info: send email on click on submit-button
+			j( "#submit-button" ).on( "click", function() {
+				submit();
 			});
 		});
 		
 		function convert ()
 		{
-			var url = '<?php echo BITCOIN_PLUGIN_URL ?>' + 'lib/exchange.php?bitcoin_plugin_url=' + '<?php echo BITCOIN_PLUGIN_URL ?>' + '&nonce=bitcoins';
+			var url = '<?php echo BITCOIN_PLUGIN_URL ?>' + 'lib/exchange.php?bitcoin_plugin_url=' + '<?php echo BITCOIN_PLUGIN_URL ?>' + '&nonce=bitcoins&action=convert';
 							
 			var price = j( "input:checked" ).val();
-			var m1 = j( "input[name='firstname']" ).val();
-			var m2 = j( "input[name='lastname']" ).val();
-			var m3 = j( "input[name='email']" ).val();
-			var m4 = j( "input[name='address']" ).val();
-			var m5 = j( "input[name='postalcode']" ).val();
-			var m6 = j( "input[name='city']" ).val();
-			var m7 = j( "input[name='country']" ).val();
+			var data = "price="+price;
 
-			var message = price + "EUR from " + m1 + ", " + m2 + ", " + m3 + ", " + m4 + ", " + m5 + ", " + m6 + ", " + m7;
-			var data = "price="+price +"&message="+message;
-			
 			j.ajax({
 			type: 'POST',
 			url: url, 
@@ -90,5 +88,31 @@ function bitcoin_calculator_widget() {
 				j('.bitcoin-result').html(d);
 			});
 		}
+		function submit ()
+		{
+			var url = '<?php echo BITCOIN_PLUGIN_URL ?>' + 'lib/exchange.php?bitcoin_plugin_url=' + '<?php echo BITCOIN_PLUGIN_URL ?>' + '&nonce=bitcoins&action=submit';
+			
+			var price = j( "input:checked" ).val();
+			var bitcoins_converted = j( "#bitcoins-converted" ).val();				
+			var o1 = j( "input[name='firstname']" ).val();
+			var o2 = j( "input[name='lastname']" ).val();
+			var o3 = j( "input[name='email']" ).val();
+			var o4 = j( "input[name='address']" ).val();
+			var o5 = j( "input[name='postalcode']" ).val();
+			var o6 = j( "input[name='city']" ).val();
+			var o7 = j( "input[name='country']" ).val();
+
+			var order_details = price + " EUR / " + bitcoins_converted + " bitcoins from " + o1 + ", " + o2 + ", " + o3 + ", " + o4 + ", " + o5 + ", " + o6 + ", " + o7;
+			var data = "order_details="+order_details;
+			
+			j.ajax({
+			type: 'POST',
+			url: url, 
+			data: data, 
+			}).success(function(d) {
+				j('#submit-button').css('display', 'none');
+				j('#submit-log').html(d);
+			});
+		}		
 	</script>
 <?php } ?>

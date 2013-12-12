@@ -7,7 +7,7 @@
 	width:520px;
 	color:#333;
 	font-size:10pt;
-	margin:10px 0 10px 0;
+	margin:10px;
 }
 .bitcoin-order-form-heading {
 	font-weight:bold;
@@ -28,7 +28,7 @@
 	margin:0px 0px 10px 0px;
 }
 .bitcoin-order-form input[type=text] {
-	width:100%;
+	width:98%;
 }
 .bitcoin-order-form-result {
 	background-color: #E28008;
@@ -44,6 +44,7 @@
 }
 .bitcoin-result td {
 	vertical-align:middle;
+	padding-top:20px;
 	border:none;
 	color:#333;
 	text-align:center;
