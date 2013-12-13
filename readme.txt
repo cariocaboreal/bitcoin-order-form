@@ -31,9 +31,21 @@ If you like this plugin please donate Bitcoin to: 15UUSJRBCEayMMUZJujdu1HgtUE8HN
 2. Activate the plugin through the \\\\\\\\\\\\\\\'Plugins\\\\\\\\\\\\\\\' menu in WordPress
 3. Use the shortcode entry '[bitcoin-order-form]' to display the order form on a page or a post.
 
+Please note that the plugin is pre-configured with products available at MapsMarker.com !
+
+Steps needed for customizing the plugin for your products:
+
+1. /lib/exchange.php: customize configurable parameters on top of the file
+2. /lib/order-form.php: adjust form fields for products (line 22+)
+
 == Frequently Asked Questions ==
 
-1. Q: I can´t change the products! A: this plugin has been customized for mapsmarker.com/bitcoin and been shared to make it easier for developers to build a customized order form - if you want to use your own products, please customize the code!
+Q: I can´t change the products! 
+
+A: this plugin has been customized for mapsmarker.com/bitcoin and been shared to make it easier for developers to build a customized order form - if you want to use your own products, please customize the code!
+Steps needed for customizing the plugin for your products:
+1. /lib/exchange.php: customize configurable parameters on top of the file
+2. /lib/order-form.php: adjust form fields for products (line 22+)
 
 == Screenshots ==
 

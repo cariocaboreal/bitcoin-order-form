@@ -3,9 +3,9 @@
 $label = "MapsMarker.com";
 $bitcoin_address = "15UUSJRBCEayMMUZJujdu1HgtUE8HNP8ph";
 $convert_from = "eur"; //info: US Dollar = usd, British Pound = gbp ...
-$curr_conversion_service = "xe"; //info: Google Currency Conversion = google
+$curr_conversion_service = "xe"; //info: XE.com = xe, Google Currency Conversion = google
 $qr_code_size = "150";
-$email_recipient_for_order_details = "enter @ email . here";
+$email_recipient_for_order_details = "email @ changeme . com";
 $email_subject_for_order_details = "MapsMarker.com - new bitcoin payment";
 
 $bitcoins_nonce = $_GET["nonce"];
