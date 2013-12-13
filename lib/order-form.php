@@ -4,7 +4,7 @@ if (basename($_SERVER['SCRIPT_FILENAME']) == 'order-form.php') { die ("Please do
 
 function bitcoin_calculator_widget() {
 ?>	
-
+	<a name="bitcoin-order-form"/>
 	<div class="bitcoin-order-form">
 		<?php if  (!in_array ('curl', get_loaded_extensions())) {
 			echo '<div style="font-weight:bold;text-align:center;font-size:120%;color:black;background:red;margin:0;">cURL is not available on your server - please contact your hoster!</div>';
@@ -55,7 +55,7 @@ function bitcoin_calculator_widget() {
 			<tr><td>Country:</td><td><input type="text" name="country" value=""/></td></tr>
 			</table>
 				
-			<a id="submit-button" class="bitcoins-pay-button" href="#" style="padding:5px 10px;margin-bottom:5px;">submit</a>
+			<a id="submit-button" class="bitcoins-pay-button" href="#bitcoin-order-form" style="padding:5px 10px;margin-bottom:5px;">submit</a>
 
 		</div>
 
