@@ -34,7 +34,7 @@ function bitcoin_calculator_widget() {
 			</div>
 	
 			<div class="bitcoin-order-form-exchange-info">
-				<a href="https://mtgox.com/" target="_blank">MtGox</a> is used as bitcoin exchange and <a href="http://xe.com/ucc" target="_blank">XE.com</a> for converting into EUR</a>
+				bitcoin exchange rate: <a href="https://mtgox.com/" target="_blank">MtGox</a>, EUR conversion rate: <a href="http://xe.com/ucc" target="_blank">XE.com</a>, powered by <a href="http://btcrate.com/" target="_blank">BTCrate.com</a>
 			</div>
 		</div>
 
